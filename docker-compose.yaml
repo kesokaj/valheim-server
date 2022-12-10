@@ -1,16 +1,17 @@
 version: "3"
+
 services:
   valheim-server:
     container_name: valheim-server
     hostname: valheim-server
     image: ghcr.io/kesokaj/valheim-server:v1
     volumes:
-    - ./saves:/home/steam/.config/unity3d/IronGate/Valheim/worlds
+    - ./saves:/home/steam/.config/unity3d/IronGate/Valheim/
     environment:
     - TZ=Europe/Stockholm
     - SERVER_NAME=valheim
-    - SERVER_PASSWORD=valheim
-    - WORLD_NAME=valheim
+    - SERVER_PASSWORD=secret
+    - WORLD_NAME=Dedicated
     ports:
     - "2456:2456"
     restart: unless-stopped
