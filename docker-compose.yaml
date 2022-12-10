@@ -9,10 +9,10 @@ services:
     - ./saves:/home/steam/.config/unity3d/IronGate/Valheim/
     environment:
     - TZ=Europe/Stockholm
-    - SERVER_NAME=valheim
-    - SERVER_PASSWORD=secret
+    - SERVER_NAME=KESOKAJ Playground
+    - SERVER_PASSWORD=freeplay
     - WORLD_NAME=Dedicated
     ports:
-    - "2456:2456"
+    - "2456-2457:2456-2457/udp"
     restart: unless-stopped
-
+    stop_grace_period: 30s

@@ -39,5 +39,6 @@ RUN /opt/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_install_
 RUN sed -i 's/My server/${SERVER_NAME}/g' start_server.sh
 RUN sed -i 's/secret/${SERVER_PASSWORD}/g' start_server.sh
 RUN sed -i 's/Dedicated/${WORLD_NAME}/g' start_server.sh
+RUN sed -i 's/-crossplay/-public 1/g' start_server.sh
 
 ENTRYPOINT ["/init.sh"]
